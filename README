@@ -1,0 +1,1 @@
+This project is a widget based on the Disqus API. The widget allows the user to specify a Disqus forum ID and displays the top 25 threads in that forum (as given by the threads/listPopular API call). They can then view the most popular or the most recent posts on each thread, and can also view the thread by clicking on it.
