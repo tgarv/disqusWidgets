@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="widget.js"></script>
+	</head>
+	<body>
+		<div id="widget" resizable="true">
+		<div id="logo">
+			<img src="disqus-logo.png"></img>
+		</div>
+			<div id="changeForum">
+				<form id="changeForumForm">
+					Enter Forum ID:<br>
+					<input type='text' id="changeForumText"></input>
+					<input type='button' id="changeForumButton" value="Change Forum"></input>
+				</form>
+			</div>
+			<div id="selectInterval">
+				Change interval to select most popular posts:
+				<a id="1h" class='intervalChoice'>1h </a><a id="6h" class='intervalChoice'>6h </a><a id="12h" class='intervalChoice'>12h </a><a id="1d" class='intervalChoice'>1d </a><a id="7d" class='intervalChoice'>7d </a><a id="30d" class='intervalChoice'>30d </a><a id="90d" class='intervalChoice'>90d </a>
+			</div>
+			<h1 id="forumTitle"></h1>
+			<div id="popularThreads"></div>
+		</div>
+	</body>
+</html>
