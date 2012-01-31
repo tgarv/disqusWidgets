@@ -51,6 +51,7 @@ function getPopularThreads(){
 	});
 }
 
+//A function to turn milliseconds into a readable date format (e.g. "x days ago")
 function readableDateTime(ms){
 	var x = ms / 1000;
 	var seconds = x % 60;
@@ -176,17 +177,20 @@ function addThreadClickListeners(){
 	});
 }
 
+//Changes the global forumID and updates the feed to show the threads for that forum
 function changeForum(ID){
 	forumID = ID;
 	getPopularThreads();
 	getForumDetailsFromID(forumID);
 }
 
-function setInterval(i){
+//Changes the interval parameter used for the Disqus API calls (1h, 1d, 30d etc.)
+function changeInterval(i){
 	interval = i;
 	getPopularThreads();
 }
 
+//Sets keyboard and click lissteners for parts of the page
 function setListeners(){
 	$('#changeForum').keypress(function(e){
     	if ( e.which == 13 ){					//Rebind enter key on this form so that it doesn't reload the page
@@ -194,11 +198,11 @@ function setListeners(){
 			return false;
 		};
 	});
-	$("#changeForumButton").click(function(){
-		changeForum($("#changeForumText").val());
+	$("#changeForumButton").click(function(){	//Set a click listener on the "Change forum" button to update the
+		changeForum($("#changeForumText").val());	//feed for the current forum
 	});
-	$(".intervalChoice").click(function(){
-		setInterval($(this).attr('id'));
+	$(".intervalChoice").click(function(){		//Set click listeners on the interval selection buttons
+		changeInterval($(this).attr('id'));
 	});
 }
 
